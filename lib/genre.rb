@@ -1,26 +1,23 @@
 class Genre
   extend Concerns::Findable
-  attr_accessor :name :songs
+  extend Memorable::ClassMethods
+  include Memorable::InstanceMethods
+
+  attr_accessor :name, :songs
+
   @@all = []
+
+  def initialize(name)
+    @name = name
+    @songs = []
+  end
 
   def self.all
     @@all
   end
 
-  def initialize
-    save
-  end
-
-  def save
-    @@all << self
-  end
-
-  def self.reset_all
-    @@all.clear
-  end
-
-  def self.count
-    @@all.size
+  def artists
+    self.songs.collect {|song| song.artist}.uniq
   end
 
 end
