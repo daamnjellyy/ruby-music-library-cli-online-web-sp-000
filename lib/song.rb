@@ -2,20 +2,25 @@ class Song
   attr_accessor :name
   @@all = []
 
-  def initialize
-    @name = name
-    save
-  end
 
-  def save
-    @@all << self
-  end
+    def self.all
+      @@all
+    end
 
-  def self.all
-    @@all
-  end
+    def initialize
+      save
+    end
 
-  def self.reset.all
-    @@all.clear
+    def save
+      @@all << self
+    end
+
+    def self.reset_all
+      @@all.clear
+    end
+
+    def self.count
+      @@all.size
+    end
+
   end
-end
