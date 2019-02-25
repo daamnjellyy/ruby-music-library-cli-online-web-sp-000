@@ -4,6 +4,7 @@ class Song
 
   def initialize
     @name = name
+    save
   end
 
   def save
