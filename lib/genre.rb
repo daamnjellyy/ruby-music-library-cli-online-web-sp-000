@@ -5,17 +5,13 @@ class Genre
   def self.all
     @@all
   end
-  
+
   def initialize
     save
   end
 
   def save
     @@all << self
-  end
-
-  def self.all
-    @@all
   end
 
   def self.reset.all
