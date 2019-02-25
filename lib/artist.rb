@@ -18,4 +18,8 @@ class Artist
       @@all.clear
     end
 
+    def self.count
+      @@all.size
+    end
+
   end
