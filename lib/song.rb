@@ -1,5 +1,5 @@
 class Song
-  extend Conerns::Findable
+  extend Concerns::Findable
   attr_accessor :name
   @@all = []
 
